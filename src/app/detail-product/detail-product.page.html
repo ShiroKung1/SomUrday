@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="oranges">
+    <ion-title>รายระเอียดสินค้า</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true"color="orange">
+<ion-card>
+  <ion-item *ngFor="let i of items ">
+    <img [src]="i.imageURL" alt="" class="img-product">
+    <ion-label>
+      <h2>{{i.name}}</h2>
+      <p>{{i.price}}฿</p>
+    </ion-label>
+    <ion-button (click)="presentPopover($event)">Click Me</ion-button>
+    <ion-popover #popover [isOpen]="isOpen" (didDismiss)="isOpen = false">
+      <ng-template>
+        <ion-content class="ion-padding">
+          <img [src]="i.imageURL" alt="">
+          <h2>{{i.name}}</h2>
+          <p>{{i.price}}฿</p>
+          <ion-button (click)="setting()">รายการสั่งซื้อ</ion-button>
+        </ion-content>
+      </ng-template>
+    </ion-popover>
+    </ion-item>
+  </ion-card>
+ 
+</ion-content>

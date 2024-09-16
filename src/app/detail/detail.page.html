@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="oranges">
+    <ion-title>Detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="orange">
+  <ion-grid>
+    <ion-col>
+      <ion-icon name="cart-outline" class="icon-btns" (click)="detailproduct()">รายการสินค้า</ion-icon>
+    </ion-col>
+  </ion-grid>
+  <ion-grid>
+    <ion-col>
+      <ion-icon name="clipboard-outline"class="icon-btn" (click)="set()">รายการสั่งซื้อ</ion-icon>
+     </ion-col>
+  <ion-col>
+    <ion-icon name="reader-outline"class="icon-btn" (click)="pro()">การตั้งค่า</ion-icon>
+  </ion-col>
+  </ion-grid>
+</ion-content>

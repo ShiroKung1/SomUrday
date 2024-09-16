@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="oranges">
+    <ion-title>ประวัติการสั่งซื้อ</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="orange">
+
+<ion-card>
+  <ion-item>
+    <ion-label>
+      <h2>รายการสั่งซื้อ</h2>
+      <p>14/08/2567</p>
+    </ion-label>
+    <ion-button expand="full" (click)="presentPopover($event)"  >รายละเอียด</ion-button>
+    <ion-popover #popover [isOpen]="isOpen" (didDismiss)="isOpen = false"  *ngFor="let a of A">
+      <ng-template>
+        <ion-content class="ion-padding">
+          <h2>{{a.names}}</h2>
+          <p>{{a.prices}}</p>
+          <p>วัน: {{a.DataTransfers}}</p>
+          <p>{{a.amount}}ขวด</p>
+        </ion-content>
+      </ng-template>
+    </ion-popover>
+  </ion-item>
+</ion-card>
+
+<ion-card>
+  <ion-item>
+    <ion-label>
+      <h2>รายการสั่งซื้อ</h2>
+      <p>14/09/2567</p>
+    </ion-label>
+    <ion-button expand="full" (click)="presentPopover($event)"  >รายละเอียด</ion-button>
+    <ion-popover #popover [isOpen]="isOpen" (didDismiss)="isOpen = false"  *ngFor="let B of B">
+      <ng-template>
+        <ion-content class="ion-padding">
+          <h2>{{B.named}}</h2>
+          <p>{{B.priced}}</p>
+          <p>วัน: {{B.DataTransfersd}}</p>
+          <p>{{B.amountd}}ขวด</p>
+        </ion-content>
+      </ng-template>
+    </ion-popover>
+  </ion-item>
+</ion-card>
+</ion-content>
